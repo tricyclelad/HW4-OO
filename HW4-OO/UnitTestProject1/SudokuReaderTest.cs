@@ -16,6 +16,13 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void InvalidTextPuzzle()
+        {
+            SudokuPuzzle Empty = SudokuReader.Read("NotAFile.txt");
+            Assert.AreEqual(Empty, null);
+        }
+
+        [TestMethod]
         public void ReadPuzzle1()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
@@ -25,8 +32,9 @@ namespace UnitTestProject1
             SudokuPuzzle readPuzzle = SudokuReader.Read("ReadPuzzle1.txt");
 
             CollectionAssert.AreEqual(myPuzzle.Cells, readPuzzle.Cells);
-            //CollectionAssert.AreEqual(myPuzzle.Cells, readPuzzle.Cells);
-            //CollectionAssert.AreEqual(myPuzzle.Cells, readPuzzle.Cells);
+            CollectionAssert.AreEqual(myPuzzle.CharacterList, readPuzzle.CharacterList);
+            Assert.AreEqual(myPuzzle.Rows, readPuzzle.Rows);
+            Assert.AreEqual(myPuzzle.BlockDimension, readPuzzle.BlockDimension);
 
             //Assert.AreEqual(myPuzzle.Rows, 4);
             //CollectionAssert.AreEqual(myPuzzle.CharacterList, Chars);
@@ -38,7 +46,7 @@ namespace UnitTestProject1
 
 
 
-                
+
         }
     }
 }
