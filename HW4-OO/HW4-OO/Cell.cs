@@ -19,12 +19,12 @@ namespace HW4_OO
             Column = _Column;
         }
 
-        //public override bool Equals(object obj)
-        //{
-        //    var rightSide = obj as Cell;
-        //    return Value == rightSide.Value &&
-        //        Row == rightSide.Row &&
-        //        Column == rightSide.Column;
-        //}
+        public override bool Equals(object obj)
+        {
+            var rightSide = obj as Cell;
+            return Value == rightSide.Value &&
+                Row == rightSide.Row &&
+                Column == rightSide.Column;
+        }
     }
 }

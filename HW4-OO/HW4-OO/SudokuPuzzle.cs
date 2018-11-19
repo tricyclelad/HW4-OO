@@ -11,7 +11,7 @@ namespace HW4_OO
         public List<char> CharacterList { get; }
 
         public int Rows { get;}
-        public int Dimension
+        public int BlockDimension
         {
             get { return (int)Math.Sqrt(Rows); }
         }
@@ -29,7 +29,57 @@ namespace HW4_OO
                     Cells[i, j] = new Cell(puzzleData[i][j], i, j) ;
                 }
             }
+        }
 
+        //returns row at given index
+        public Cell[] GetRow(int index)
+        {
+            if (index < 0 || index >= Rows)
+                return null;
+
+            Cell[] row = new Cell[Rows];
+
+            for (int i = 0; i < Rows; i++)
+            {
+                row[i] = Cells[index, i];
+            }
+
+            return row;
+        }
+
+        //returns column at given index
+        public Cell[] GetCol(int index)
+        {
+            if (index < 0 || index >= Rows)
+                return null;
+
+            Cell[] column = new Cell[Rows];
+
+            for (int i = 0; i < Rows; i++)
+            {
+                column[i] = Cells[i, index];
+            }
+
+            return column;
+        
+        }
+
+        //returns block at given coordinate
+        public Cell[] GetBlock(int row, int column)
+        {
+            if (column < 0 || row < 0 || column >= Rows || row >= Rows)
+                return null;
+
+            List<Cell> block = new List<Cell>(Rows);
+
+            for (int i = row; i < BlockDimension; i++)
+            {
+                for (int j = column; j < BlockDimension; j++)
+                {
+                    block.Add(Cells[i,j]);
+                }
+            }
+            return block.ToArray();
 
         }
 
