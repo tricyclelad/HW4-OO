@@ -72,9 +72,9 @@ namespace HW4_OO
 
             List<Cell> block = new List<Cell>(Rows);
 
-            for (int i = row; i < BlockDimension; i++)
+            for (int i = row; i < row + BlockDimension; i++)
             {
-                for (int j = column; j < BlockDimension; j++)
+                for (int j = column; j < column + BlockDimension; j++)
                 {
                     block.Add(Cells[i,j]);
                 }
