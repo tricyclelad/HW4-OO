@@ -159,7 +159,7 @@ namespace UnitTestProject1
             string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
             string answer = myPuzzle.ToString();
-            string expected = "4\r\n1 2 3 4 \r\n1 \r\n2 \r\n- \r\n1 \r\n- \r\n- \r\n- \r\n2 \r\n3 \r\n- \r\n2 \r\n- \r\n- \r\n4 \r\n- \r\n3 \r\n";
+            string expected = "4\r\n1 2 3 4 \r\n1 2 - 1 \r\n- - - 2 \r\n3 - 2 - \r\n- 4 - 3 \r\n";
             Assert.AreEqual(answer, expected);
         }
     }

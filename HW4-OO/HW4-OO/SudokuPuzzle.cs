@@ -113,9 +113,9 @@ namespace HW4_OO
             {
                 for (int j = 0; j < Rows; j++)
                 {
-                    puzzleString.AppendFormat(Cells[i,j].Value + " ");
-                    puzzleString.AppendLine();
+                    puzzleString.Append(Cells[i,j].Value + " ");
                 } 
+                    puzzleString.AppendLine();
             }
             return puzzleString.ToString();
         }

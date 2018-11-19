@@ -22,7 +22,7 @@ namespace HW4_OO
                 return;
             }
 
-            File.WriteAllText(path,"myPuzzle");
+            File.WriteAllText(path,puzzle.ToString());
         }
 
     }
