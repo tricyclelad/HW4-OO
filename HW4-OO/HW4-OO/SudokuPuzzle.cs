@@ -17,16 +17,16 @@ namespace HW4_OO
         }
         public Cell[,] Cells { get; set; }
 
-        public SudokuPuzzle(List<char> _CharacterList, int _Rows, char[,] puzzleData)
+        public SudokuPuzzle(List<char> _CharacterList, int _Rows, string[] puzzleData)
         {
             Rows = _Rows;
             CharacterList = _CharacterList;
             Cells = new Cell[puzzleData.Length, puzzleData.Length];
             for (int i = 0; i < puzzleData.Length; i++)
             {
-                for (int j = 0; j < puzzleData.Length; j++)
+                for (int j = 0; j < puzzleData[i].Length; j++)
                 {
-                    Cells[i, j] = new Cell(puzzleData[i,j], i, j) ;
+                    Cells[i, j] = new Cell(puzzleData[i][j], i, j) ;
                 }
             }
 
