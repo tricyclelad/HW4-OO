@@ -10,7 +10,9 @@ namespace HW4_OO
     {
         public override bool SolveCell(SudokuPuzzle _Puzzle, int _Row, int _Column)
         {
-            throw new NotImplementedException();
+            return FindOnlyChoice(_Puzzle, _Row, _Column, _Puzzle.GetRow(_Row)) ||
+            FindOnlyChoice(_Puzzle, _Row, _Column, _Puzzle.GetColumn(_Column)) ||
+            FindOnlyChoice(_Puzzle, _Row, _Column, _Puzzle.GetBlock(_Row,_Column));
         }
 
         //CellSet here can be a column, a row and a block

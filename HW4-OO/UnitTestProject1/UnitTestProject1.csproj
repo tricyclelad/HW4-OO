@@ -52,6 +52,7 @@
     <Compile Include="SudokuPuzzleTest.cs" />
     <Compile Include="SudokuReaderTest.cs" />
     <Compile Include="SudokuWriterTest.cs" />
+    <Compile Include="CellSolutionAlgorithmTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -10,7 +10,7 @@ namespace HW4_OO
     {
         public int Row { get; private set; }
         public int Column { get; private set; }
-        public char Value { get; private set; }
+        public char Value { get; set; }
 
         public Cell(char _Value, int _Row, int _Column)
         {

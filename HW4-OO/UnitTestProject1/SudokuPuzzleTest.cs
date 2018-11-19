@@ -111,11 +111,11 @@ namespace UnitTestProject1
                 Col4[i] = new Cell(puzzleItems[i].ToCharArray()[3], i, 3);
             }
 
-            var RealCol1 = myPuzzle.GetCol(0);
-            var RealCol2 = myPuzzle.GetCol(1);
-            var RealCol3 = myPuzzle.GetCol(2);
-            var RealCol4 = myPuzzle.GetCol(3);
-            var NullCol = myPuzzle.GetCol(4);
+            var RealCol1 = myPuzzle.GetColumn(0);
+            var RealCol2 = myPuzzle.GetColumn(1);
+            var RealCol3 = myPuzzle.GetColumn(2);
+            var RealCol4 = myPuzzle.GetColumn(3);
+            var NullCol = myPuzzle.GetColumn(4);
 
             CollectionAssert.AreEqual(RealCol1, Col1);
             CollectionAssert.AreEqual(RealCol2, Col2);

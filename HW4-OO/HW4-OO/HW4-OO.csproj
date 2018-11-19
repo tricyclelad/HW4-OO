@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Cell.cs" />
     <Compile Include="CellSolutionAlgorithm.cs" />
+    <Compile Include="OnlyChoiceAlgorithm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SudokuPuzzle.cs" />

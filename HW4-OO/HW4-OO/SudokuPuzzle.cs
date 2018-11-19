@@ -61,7 +61,7 @@ namespace HW4_OO
         }
 
         //returns column at given index
-        public Cell[] GetCol(int index)
+        public Cell[] GetColumn(int index)
         {
             if (index < 0 || index >= Rows)
                 return null;
@@ -77,6 +77,16 @@ namespace HW4_OO
         
         }
 
+        //used in GetBlock,
+        //Gets the upper left value for the correct block
+        //given a row and col.
+        //Ex. if given 0,0 will give 0,0 the upper left block
+        // if given 1,1 will give 0,0 still the upper left block
+        //Takes advantage of integer division
+        public Tuple<int, int> GetBlockNumber(int _Row, int _Col)
+        {
+            return Tuple.Create((_Row/BlockDimension) * BlockDimension,(_Col/BlockDimension) * BlockDimension);
+        }
         //returns block at given coordinate
         public Cell[] GetBlock(int row, int column)
         {
@@ -85,15 +95,16 @@ namespace HW4_OO
 
             List<Cell> block = new List<Cell>(Rows);
 
-            for (int i = row; i < row + BlockDimension; i++)
+            var blockNumber = GetBlockNumber(row,column);
+
+            for (int i = blockNumber.Item1; i < blockNumber.Item1 + BlockDimension; i++)
             {
-                for (int j = column; j < column + BlockDimension; j++)
+                for (int j = blockNumber.Item2; j < blockNumber.Item2 + BlockDimension; j++)
                 {
                     block.Add(Cells[i,j]);
                 }
             }
             return block.ToArray();
-
         }
 
 
