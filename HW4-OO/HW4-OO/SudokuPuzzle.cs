@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW4_OO
 {
-    class SudokuPuzzle
+    public class SudokuPuzzle
     {
         public List<char> CharacterList { get; }
 
@@ -17,10 +17,10 @@ namespace HW4_OO
         }
         public char [,] Cells { get; set; }
 
-        public SudokuPuzzle(string _CharacterList, int _Rows, string[] puzzleData)
+        public SudokuPuzzle(List<char> _CharacterList, int _Rows, string[] puzzleData)
         {
             Rows = _Rows;
-            CharacterList = _CharacterList.ToList();
+            CharacterList = _CharacterList;
             Cells = new char[puzzleData.Length, puzzleData.Length];
             for (int i = 0; i < puzzleData.Length; i++)
             {
