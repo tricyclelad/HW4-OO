@@ -9,15 +9,15 @@ namespace HW4_OO
 {
     public static class SudokuReader
     {
-        public static SudokuPuzzle Read(string filename)
+        public static SudokuPuzzle Read(string path)
         {
-            if (filename == null)
+            if (path == null)
             {
                 return null;
             }
             try
             {
-                using (var reader = File.OpenText(filename))
+                using (var reader = File.OpenText(path))
                 {
                     int Rows = int.Parse(reader.ReadLine());
                     string stringCharList = reader.ReadLine().Replace(" ", "");

@@ -97,5 +97,27 @@ namespace HW4_OO
         }
 
 
+        public override string ToString()
+        {
+            StringBuilder puzzleString = new StringBuilder();
+
+            puzzleString.AppendLine(Rows.ToString());
+
+            foreach (var item in CharacterList)
+            {
+                puzzleString.Append(item + " ");
+            }
+
+            puzzleString.AppendLine();
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Rows; j++)
+                {
+                    puzzleString.AppendFormat(Cells[i,j].Value + " ");
+                    puzzleString.AppendLine();
+                } 
+            }
+            return puzzleString.ToString();
+        }
     }
 }
