@@ -28,17 +28,22 @@ namespace HW4_OO
                 if (cell.Value =='-')
                 {
                     unsolvedCellCount++;
+                    if (unsolvedCellCount>1)
+                    {
+                        return false;
+                    }
                 }
             }
             //If there is only one option, find out which value is not used, then place it in that spot
             if (unsolvedCellCount == 1)
             {
                 List<char> PuzzleCharacterList = new List<char>();
+                List<char> cellList = new List<char>();
                 PuzzleCharacterList = _Puzzle.CharacterList;
+                cellList = toCharList(cellSet);
                 //Finds the differences of two char lists
+                //.Single()returns the only element and throws an exception if there isn't only one.
                 _Puzzle.Cells[_Row, _Column].Value = PuzzleCharacterList.Except(toCharList(cellSet)).Single();
-                //List<char> cellList = new List<char>();
-                //cellList = toCharList(cellSet);
                 return true;
             }
             return false;

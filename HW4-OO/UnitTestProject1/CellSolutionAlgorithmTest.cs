@@ -12,7 +12,7 @@ namespace UnitTestProject1
         public void TestMethod1()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
             //CellSolutionAlgorithm solver = new  implemented version of this CellSolutionAlgorithm();
   

@@ -15,12 +15,12 @@ namespace UnitTestProject1
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
             //char[,] puzzleItems = new char[,] {{'1','2', '-','1'},{'-', '-', '-', '2' },{'3','-','2','-'},{'-','4','-','3', }};
             //string[] puzzleItems = new string[] { "12-1","---2","3-2-","-4-3"};
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
             Assert.AreEqual(myPuzzle.Rows, 4);
             CollectionAssert.AreEqual(myPuzzle.CharacterList, Chars);
             Assert.AreEqual(myPuzzle.BlockDimension, 2);
-            Assert.AreEqual(myPuzzle.Cells[0, 0].Value, '1');
+            Assert.AreEqual(myPuzzle.Cells[0, 0].Value, '4');
             Assert.AreEqual(myPuzzle.Cells[0, 0].Column, 0);
             Assert.AreEqual(myPuzzle.Cells[0, 0].Row, 0);
 
@@ -62,7 +62,7 @@ namespace UnitTestProject1
         {
 
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
 
             Cell[] Row1 = new Cell[4];
@@ -95,7 +95,7 @@ namespace UnitTestProject1
         public void TestGetColumn()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
 
             Cell[] Col1 = new Cell[4];
@@ -128,7 +128,7 @@ namespace UnitTestProject1
         public void testGetBlock()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
 
             var getBlock1 = myPuzzle.GetBlock(0,0);
@@ -156,10 +156,10 @@ namespace UnitTestProject1
         public void testToString()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
             string answer = myPuzzle.ToString();
-            string expected = "4\r\n1 2 3 4 \r\n1 2 - 1 \r\n- - - 2 \r\n3 - 2 - \r\n- 4 - 3 \r\n";
+            string expected = "4\r\n1 2 3 4 \r\n4 2 - 1 \r\n- - - 2 \r\n3 - 2 - \r\n- 4 - 3 \r\n";
             Assert.AreEqual(answer, expected);
         }
     }

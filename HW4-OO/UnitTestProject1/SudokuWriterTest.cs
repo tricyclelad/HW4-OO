@@ -13,9 +13,9 @@ namespace UnitTestProject1
         public void WriteTest1()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
-            string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
-            string expected = "4\r\n1 2 3 4 \r\n1 2 - 1 \r\n- - - 2 \r\n3 - 2 - \r\n- 4 - 3 \r\n";
+            string expected = "4\r\n1 2 3 4 \r\n4 2 - 1 \r\n- - - 2 \r\n3 - 2 - \r\n- 4 - 3 \r\n";
             SudokuWriter.Write("WriteTest1.txt", myPuzzle);
             string actual = File.ReadAllText("WriteTest1.txt");
 

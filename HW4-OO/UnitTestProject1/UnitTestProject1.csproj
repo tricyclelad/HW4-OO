@@ -53,6 +53,7 @@
     <Compile Include="SudokuReaderTest.cs" />
     <Compile Include="SudokuWriterTest.cs" />
     <Compile Include="CellSolutionAlgorithmTest.cs" />
+    <Compile Include="OnlyChoiceAlgorithmTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
