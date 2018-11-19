@@ -125,6 +125,7 @@ namespace UnitTestProject1
             var getBlock2 = myPuzzle.GetBlock(0,2);
             var getBlock3 = myPuzzle.GetBlock(2,0);
             var getBlock4 = myPuzzle.GetBlock(2,2);
+            var getNullBlock = myPuzzle.GetBlock(4, 0);
 
             int k = 0;
             for (int i = 0; i < 2; i++)
@@ -138,6 +139,8 @@ namespace UnitTestProject1
                     k++;
                 }
            }
+
+            Assert.AreEqual(getNullBlock, null);
         }
 
     }
