@@ -7,7 +7,7 @@ using System.IO;
 
 namespace HW4_OO
 {
-    public class SudokuReader
+    public static class SudokuReader
     {
         public static SudokuPuzzle Read(string filename)
         {
