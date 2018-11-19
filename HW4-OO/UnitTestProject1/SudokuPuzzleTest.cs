@@ -18,6 +18,7 @@ namespace UnitTestProject1
             string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
             SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
             Assert.AreEqual(myPuzzle.Rows, 4);
+            CollectionAssert.AreEqual(myPuzzle.CharacterList, Chars);
             Assert.AreEqual(myPuzzle.BlockDimension, 2);
             Assert.AreEqual(myPuzzle.Cells[0, 0].Value, '1');
             Assert.AreEqual(myPuzzle.Cells[0, 0].Column, 0);
@@ -47,6 +48,15 @@ namespace UnitTestProject1
             Assert.AreEqual(myPuzzle.Cells[3, 2].Value, '-');
             Assert.AreEqual(myPuzzle.Cells[3, 3].Value, '3');
         }
+
+        //[TestMethod]
+        //public void TestInvalidConstruction()
+        //{
+        //    List<char> Chars = new List<char>(); 
+        //    string[] puzzleItems = "12-1\n---2\n3-2-\n-4-3".Split();
+        //    SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
+        //}
+
         [TestMethod]
         public void TestGetRow()
         {

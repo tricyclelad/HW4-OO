@@ -19,6 +19,19 @@ namespace HW4_OO
 
         public SudokuPuzzle(List<char> _CharacterList, int _Rows, string[] puzzleData)
         {
+            if (_CharacterList == null)
+                throw new ArgumentException("Null _CharacterList Argument");
+
+            if (puzzleData == null)
+                throw new ArgumentException("Null puzzleData Argument");
+
+
+            if (_CharacterList.Count == 0)
+                throw new ArgumentException("Empty _CharacterList Argument");
+
+            if (_Rows<0)
+                throw new ArgumentException("Negative _Rows Argument");
+
             Rows = _Rows;
             CharacterList = _CharacterList;
             Cells = new Cell[puzzleData.Length, puzzleData.Length];
