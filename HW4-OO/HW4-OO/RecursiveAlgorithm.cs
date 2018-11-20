@@ -18,7 +18,7 @@ namespace HW4_OO
             if (_Puzzle.Cells[_Row,_Column].Value!= '-')
             {
                 //Console.WriteLine("Working" + _Row + _Column);
-                if (SolveNext(_Puzzle,_Row,_Column))
+                if (Next(_Puzzle,_Row,_Column))
                 {
                     return true;
                 }
@@ -26,10 +26,10 @@ namespace HW4_OO
             }
             foreach (var character in _Puzzle.CharacterList)
             {
-                if (IsValidMove(_Puzzle, _Row, _Column, character))
+                if (AvailableMove(_Puzzle, _Row, _Column, character))
                 {
                     _Puzzle.Cells[_Row, _Column].Value = character;
-                    if (SolveNext(_Puzzle, _Row, _Column))
+                    if (Next(_Puzzle, _Row, _Column))
                     {
                         return true;
                     }
@@ -38,7 +38,7 @@ namespace HW4_OO
             _Puzzle.Cells[_Row, _Column].Value = '-';
             return false;
         }
-        private bool SolveNext(SudokuPuzzle _Puzzle, int _Row, int _Column)
+        private bool Next(SudokuPuzzle _Puzzle, int _Row, int _Column)
         {
             if (_Column == _Puzzle.Rows -1)
             {
@@ -54,7 +54,7 @@ namespace HW4_OO
             return false;
         }
 
-        private bool IsValidMove(SudokuPuzzle _Puzzle, int _Row, int _Column, char value)
+        private bool AvailableMove(SudokuPuzzle _Puzzle, int _Row, int _Column, char value)
         {
             var r = _Puzzle.GetRow(_Row);
             var c = _Puzzle.GetColumn(_Column);
