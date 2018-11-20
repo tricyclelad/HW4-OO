@@ -17,6 +17,7 @@ namespace HW4_OO
 
             if (_Puzzle.Cells[_Row,_Column].Value!= '-')
             {
+                //Console.WriteLine("Working" + _Row + _Column);
                 if (SolveNext(_Puzzle,_Row,_Column))
                 {
                     return true;
