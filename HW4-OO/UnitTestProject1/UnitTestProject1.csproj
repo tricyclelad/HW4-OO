@@ -54,6 +54,7 @@
     <Compile Include="SudokuWriterTest.cs" />
     <Compile Include="CellSolutionAlgorithmTest.cs" />
     <Compile Include="OnlyChoiceAlgorithmTest.cs" />
+    <Compile Include="RecursiveAlgorithmTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

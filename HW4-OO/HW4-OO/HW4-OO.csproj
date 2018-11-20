@@ -46,6 +46,7 @@
     <Compile Include="OnlyChoiceAlgorithm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecursiveAlgorithm.cs" />
     <Compile Include="SudokuPuzzle.cs" />
     <Compile Include="SudokuReader.cs" />
     <Compile Include="SudokuWriter.cs" />
