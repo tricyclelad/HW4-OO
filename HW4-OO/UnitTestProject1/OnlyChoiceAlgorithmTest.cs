@@ -9,6 +9,44 @@ namespace UnitTestProject1
     public class OnlyChoiceAlgorithmTest
     {
         [TestMethod]
+        public void isSolvedTest()
+        {
+            List<char> Chars = new List<char> { '1', '2', '3', '4' };
+            string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
+            SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
+
+            List<char> Chars2 = new List<char> { '1', '2', '3', '4' };
+            string[] puzzleItems2 = "4231\n1342\n3124\n2413".Split();
+            SudokuPuzzle myPuzzle2 = new SudokuPuzzle(Chars, 4, puzzleItems2);
+
+
+            CellSolutionAlgorithm solution = new OnlyChoiceAlgorithm();
+            bool notSolved = solution.IsSolved(myPuzzle);
+            Assert.IsFalse(notSolved);
+
+            bool Solved = solution.IsSolved(myPuzzle2);
+            Assert.IsTrue(Solved);
+        }
+        //[TestMethod]
+        //public void betterIsSolvedTest()
+        //{
+        //    List<char> Chars = new List<char> { '1', '2', '3', '4' };
+        //    string[] puzzleItems = "42-1\n---2\n3-2-\n-4-3".Split();
+        //    SudokuPuzzle myPuzzle = new SudokuPuzzle(Chars, 4, puzzleItems);
+
+        //    List<char> Chars2 = new List<char> { '1', '2', '3', '4' };
+        //    string[] puzzleItems2 = "4231\n1342\n3124\n2413".Split();
+        //    SudokuPuzzle myPuzzle2 = new SudokuPuzzle(Chars, 4, puzzleItems2);
+
+
+        //    CellSolutionAlgorithm solution = new OnlyChoiceAlgorithm();
+        //    bool notSolved = solution.betterIsSolved(myPuzzle);
+        //    Assert.IsFalse(notSolved);
+
+        //    bool Solved = solution.betterIsSolved(myPuzzle2);
+        //    Assert.IsTrue(Solved);
+        //}
+        [TestMethod]
         public void OnlyChoiceRow()
         {
             List<char> Chars = new List<char> { '1', '2', '3', '4' };
