@@ -67,6 +67,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="25x25.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ReadPuzzle1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
