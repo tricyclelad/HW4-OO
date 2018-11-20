@@ -39,6 +39,7 @@ namespace HW4_OO
                         SudokuPuzzle original = SudokuPuzzle.copySudokuPuzzle(readPuzzle);
                         StrategySolve.Solve(readPuzzle);
                         Console.WriteLine(original.ToString());
+                        Console.WriteLine("Solution:");
                         Console.WriteLine(readPuzzle.ToString());
                         break;
                     }
@@ -56,10 +57,10 @@ namespace HW4_OO
                     StrategySolve.Solve(readPuzzle);
 
                     SudokuWriter.Write(outPutPath, original);
+                    File.AppendAllText(outPutPath, "Solution:" + Environment.NewLine);
                     File.AppendAllText(outPutPath, readPuzzle.ToString() + Environment.NewLine);
                     break;
                 }
-
             }
             // For writing file tests.
             //List<char> Chars = new List<char> { '1', '2', '3', '4' };
