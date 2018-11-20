@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,11 +47,17 @@ namespace HW4_OO
                 if (line == "FS")
                 {
                     Console.WriteLine("Please give the path to the puzzle");
-                    line = Console.ReadLine();
-                    Console.WriteLine(line + " This is what you wrote");
-                    Console.WriteLine("Please give the output path to the puzzle");
-                    line = Console.ReadLine();
-                    Console.WriteLine(line + " This is what you wrote");
+                    string puzzlePath = Console.ReadLine();
+                    Console.WriteLine("Please give the output path with file name");
+                    string outPutPath = Console.ReadLine();
+
+                    SudokuPuzzle readPuzzle = SudokuReader.Read(puzzlePath);
+                    SudokuPuzzle original = SudokuPuzzle.copySudokuPuzzle(readPuzzle);
+                    StrategySolve.Solve(readPuzzle);
+
+                    SudokuWriter.Write(outPutPath, original);
+                    File.AppendAllText(outPutPath, readPuzzle.ToString() + Environment.NewLine);
+                    break;
                 }
 
             }
