@@ -49,6 +49,27 @@ namespace HW4_OO
         //    return true;
         //}
 
+        public bool SolvePuzzle(SudokuPuzzle _Puzzle)
+        {
+            bool solving = true;
+
+            while (solving)
+            {
+                solving = false;
+                for (int i = 0; i < _Puzzle.Rows; i++)
+                {
+                    for (int j = 0; j < _Puzzle.Rows; j++)
+                    {
+                        if (_Puzzle.Cells[i,j].Value == '-')
+                        {
+                            solving = SolveCell(_Puzzle, i, j);
+                        }
+
+                    }
+                }
+            }
+            return IsSolved(_Puzzle);
+        }
         public List<char> toCharList(Cell[] _Cells)
         {
             List<char> CellList = new List<char>();
