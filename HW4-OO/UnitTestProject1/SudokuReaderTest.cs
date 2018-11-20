@@ -42,11 +42,14 @@ namespace UnitTestProject1
             //Assert.AreEqual(myPuzzle.Cells[0, 0].Value, '1');
             //Assert.AreEqual(myPuzzle.Cells[0, 0].Column, 0);
             //Assert.AreEqual(myPuzzle.Cells[0, 0].Row, 0);
-
-
-
-
-
         }
+        [TestMethod]
+        public void ReadUnformatedPuzzle1()
+        {
+            SudokuPuzzle readPuzzle = SudokuReader.Read("ReadPuzzle2.txt");
+
+            Assert.IsNull(readPuzzle);
+        }
+ 
     }
 }

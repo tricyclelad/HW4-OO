@@ -8,15 +8,19 @@ namespace HW4_OO
 {
     public class SudokuPuzzle
     {
-        public List<char> CharacterList { get; }
+        public List<char> CharacterList { get; set; }
 
-        public int Rows { get;}
+        public int Rows { get; set; }
         public int BlockDimension
         {
             get { return (int)Math.Sqrt(Rows); }
         }
         public Cell[,] Cells { get; set; }
 
+        public SudokuPuzzle()
+        {
+            CharacterList = new List<char>();
+        }
         public SudokuPuzzle(List<char> _CharacterList, int _Rows, string[] puzzleData)
         {
             if (_CharacterList == null)
@@ -129,6 +133,25 @@ namespace HW4_OO
                     puzzleString.AppendLine();
             }
             return puzzleString.ToString();
+        }
+
+        public static SudokuPuzzle copySudokuPuzzle(SudokuPuzzle _Puzzle)
+        {
+
+            SudokuPuzzle copy = new SudokuPuzzle();
+            copy.CharacterList = _Puzzle.CharacterList;
+            copy.Rows = _Puzzle.Rows;
+            copy.Cells = new Cell[copy.Rows, copy.Rows];
+            for (int i = 0; i < copy.Rows; i++)
+            {
+                for (int j = 0; j < copy.Rows; j++)
+                {
+                    copy.Cells[i, j] = new Cell(_Puzzle.Cells[i,j].Value, _Puzzle.Cells[i,j].Row, _Puzzle.Cells[i,j].Column) ;
+                }
+            }
+
+            return copy;
+
         }
     }
 }

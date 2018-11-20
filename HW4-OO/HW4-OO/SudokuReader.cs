@@ -38,6 +38,21 @@ namespace HW4_OO
                             return null;
                         }
                     }
+
+                    SudokuPuzzle possibleSudoku = new SudokuPuzzle(CharacterList, Rows, PuzzleData);
+
+                    if (!isCorrectDimension(possibleSudoku))
+                    {
+                        return null;
+                    }
+
+                    if (!isCorrectFormat(possibleSudoku))
+                    {
+                        return null;
+                    }
+
+                                       
+
                     return new SudokuPuzzle(CharacterList, Rows, PuzzleData);
                 }
 
@@ -46,6 +61,30 @@ namespace HW4_OO
             {
                 return null;
             }
+        }
+
+        public static bool isCorrectDimension(SudokuPuzzle _Puzzle)
+        {
+            if (!(_Puzzle.Rows == 4 || _Puzzle.Rows== 9 || _Puzzle.Rows== 16 || _Puzzle.Rows== 25 || _Puzzle.Rows== 36))
+            {
+                Console.WriteLine(_Puzzle.ToString());
+                Console.WriteLine("Invalid: please enter 4, 9, 16, 25, or 36 rows");
+                return false;
+            }
+            return true;
+        }
+        
+        public static bool isCorrectFormat(SudokuPuzzle _Puzzle)
+        {
+            //Cell[] row;
+            //List<char> validChars = _Puzzle.CharacterList;
+            //for (int i = 0; i < _Puzzle.Rows; i++)
+            //{
+            //    row = _Puzzle.GetRow(i);
+
+            //}
+            return true;
+
         }
     }
 }
